@@ -11,6 +11,7 @@ type Respository interface {
 	SetStudent(ctx context.Context, student *models.Student) error
 	GetTest(ctx context.Context, id string) (*models.Test, error)
 	SetTest(ctx context.Context, test *models.Test) error
+	SetQuestion(ctx context.Context, question *models.Question) error
 }
 
 var impl Respository
@@ -33,4 +34,8 @@ func GetTest(ctx context.Context, id string) (*models.Test, error) {
 
 func SetTest(ctx context.Context, test *models.Test) error {
 	return impl.SetTest(ctx, test)
+}
+
+func SetQuestion(ctx context.Context, question *models.Question) error {
+	return impl.SetQuestion(ctx, question)
 }
