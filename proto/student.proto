@@ -14,6 +14,11 @@ message GetStudentRequest {
     string id = 1;
 }
 
+message SetStudentResponse {
+    string id = 1;
+}
+
 service StudentService {
     rpc GetStudent(GetStudentRequest) returns (Student);
+    rpc SetStudent(Student) returns (SetStudentResponse);
 }
