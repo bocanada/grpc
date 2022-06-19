@@ -13,4 +13,15 @@ CREATE TABLE tests (
     id VARCHAR(32) PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
-)
+);
+
+
+DROP TABLE IF EXISTS questions;
+
+CREATE TABLE questions (
+    id VARCHAR(32) PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    answer VARCHAR(255) NOT NULL,
+    test_id VARCHAR(32) REFERENCES tests(id),
+    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
