@@ -10,10 +10,11 @@ import (
 
 type Server struct {
 	repo repository.Respository
+	studentpb.UnimplementedStudentServiceServer
 }
 
 func NewStudentServer(repo repository.Respository) *Server {
-	return &Server{repo}
+	return &Server{repo, studentpb.UnimplementedStudentServiceServer{}}
 }
 
 func (s *Server) GetStudent(ctx context.Context, req *studentpb.GetStudentRequest) (*studentpb.Student, error) {
