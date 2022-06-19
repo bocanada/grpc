@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    id VARCHAR(32) PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    age INTEGER NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
